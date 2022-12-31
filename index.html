@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cruds</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cruds">
+      <!-- Start Header -->
+      <div class="head">
+        <h2 class="head-H2">cruds</h2>
+        <p class="paragraph">cruds read update delete search</p>
+      </div>
+      <!-- End Header -->
+
+      <!-- Start Input -->
+      <div class="input">
+        <input type="text" id="title" placeholder="Title" />
+        <input type="text" id="ms" placeholder="MS" />
+        <div class="price">
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="price"
+            placeholder="Price"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="discounts"
+            placeholder="Discounts"
+          />
+          <small id="total"></small>
+        </div>
+        <input type="number" id="count" placeholder="Count" />
+        <input type="text" id="category" placeholder="Category" />
+        <button id="create">Create</button>
+      </div>
+      <!-- End Input -->
+
+      <!-- Start Output -->
+      <div class="output">
+        <div class="searchBlock">
+          <input
+            onkeyup="searchOnData(this.value)"
+            type="text"
+            id="search"
+            placeholder="Search"
+          />
+          <div class="btnSearch">
+            <button onclick="moodByTitleAndCategory(this.id)" id="ms">
+              search MS
+            </button>
+            <button
+              onclick="moodByTitleAndCategory(this.id)"
+              id="searchCategory"
+            >
+              search Category
+            </button>
+          </div>
+        </div>
+        <div id="deleteAll"></div>
+        <table id="table">
+          <tr>
+            <td>ID</td>
+            <td>TITLE</td>
+            <td>MS</td>
+            <td>PRICE</td>
+            <td>DISCOUNTS</td>
+            <td>TOTAL</td>
+            <td>CATEGORY</td>
+            <td>Date</td>
+            <td>UPDATE</td>
+            <td>DELETE</td>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <!-- End Output -->
+    </div>
+    <script src="mine.js"></script>
+  </body>
+</html>
